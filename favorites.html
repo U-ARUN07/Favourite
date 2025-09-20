@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akshitha's Favorites</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1e1e1e, #000000);
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 20px 0;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 10px yellow;
+    }
+
+    .home-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: yellow;
+      color: black;
+      padding: 8px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      margin: 10px 0;
+      font-size: 1.3rem;
+      color: yellow;
+    }
+
+    /* FIXED Modal CSS */
+    .modal {
+      display: none;
+      /* ✅ This ensures it's hidden initially */
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 100;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal img {
+      width: 85%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px white;
+      object-fit: contain;
+    }
+
+    .modal p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #fffacd;
+    }
+
+    .close-btn {
+      margin-top: 20px;
+      background: yellow;
+      color: black;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html" class="home-btn">🏠 Home</a>
+  <h1>Akshitha's Favorites</h1>
+
+  <div class="grid">
+    <!-- Favorite Color -->
+    <div class="card"
+      onclick="showModal('Black.jpg','Black is classy and elegant — just like Akshitha!')">
+      <img src="Fav-Colour.png" alt="Black">
+      <h2>Favorite Color</h2>
+    </div>
+
+    <!-- Favorite Food -->
+    <div class="card"
+      onclick="showModal('Biryani.jpg','Biryani is her absolute favorite dish! 🍛')">
+      <img src="Fav-Food.jpg"
+        alt="Biryani">
+      <h2>Favorite Food</h2>
+    </div>
+
+    <!-- Favorite Hobby -->
+    <div class="card"
+      onclick="showModal('Movies.jpeg','She loves playing games & watching movies 🎮🎬')">
+      <img src="Fav-Hobbies.jpg"
+        alt="Hobbies">
+      <h2>Favorite Hobby</h2>
+    </div>
+
+    <!-- Favorite Animal -->
+    <div class="card"
+      onclick="showModal('Lion.jpg','The lion – symbol of courage and strength! 🦁')">
+      <img
+        src="Fav-Animal.jpg"
+        alt="Lion">
+      <h2>Favorite Animal</h2>
+    </div>
+
+    <!-- Favorite Game -->
+    <div class="card"
+      onclick="showModal('Kho-Kho.jpeg','Kho-Kho is her favorite Sports to play! 🏃‍♀️')">
+      <img src="Fav-Sports.jpg" alt="Kho-Kho">
+      <h2>Favorite Sports</h2>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <img id="modalImg" src="" alt="">
+    <p id="modalText"></p>
+    <div class="close-btn" onclick="closeModal()">Close</div>
+  </div>
+
+  <script>
+    function showModal(image, text) {
+      document.getElementById("modalImg").src = image;
+      document.getElementById("modalText").innerText = text;
+      document.getElementById("modal").classList.add("active");
+    }
+
+    function closeModal() {
+      document.getElementById("modal").classList.remove("active");
+    }
+  </script>
+</body>
+
+</html>

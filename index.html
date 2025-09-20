@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Akshitha</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      background: white;
+      color: black;
+      font-size: 1.2rem;
+      padding: 12px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.3s, background 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: #ffe259;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      clip-path: polygon(50% 0%, 61% 19%, 82% 19%, 100% 38%, 100% 62%, 82% 81%, 50% 100%, 18% 81%, 0% 62%, 0% 38%, 18% 19%, 39% 19%);
+      animation: float 5s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-10px) scale(1);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>💛 Welcome Akshitha 💛</h1>
+  <p>Here is something special just for you! Click below to explore your favorite things beautifully displayed.</p>
+  <a href="favorites.html" class="btn">See My Favorites</a>
+
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+
+</html>
